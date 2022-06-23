@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>TrackballRotator Demo</title>
+    <style>
+        body {
+            background-color: #EEEEEE;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        #webglcanvas {
+            display: block; /* To remove the scrollbars */
+            width: 100%;
+            height: 100%;
+        }
+
+        #info-block {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+
+    <!--
+        An example using a TrackballRotator, defined in TrackballRotator.js,
+        to implement rotation by mouse.
+    -->
+
+    <script src="Utils/trackball-rotator.js"></script>
+    <script src="Utils/m4.js"></script>
+    <script src="shader.js"></script>
+    <script src="main.js"></script>
+
+
+</head>
+<body onload="init()">
+
+<noscript>
+    <hr>
+    <h3>This page requires Javascript and a web browser that supports WebGL</h3>
+    <hr>
+</noscript>
+<div id='info-block'>
+    <h2>Surface of Revolution of a Parabola of Arbitrary Position</h2>
+
+    <p id="message" style="margin-bottom: 4px">Drag your mouse on the mesh to rotate it.<br>
+        (On a touch screen, you can use your finger.)<br>
+        Made by Svyatoslav Slavskyy</p>
+
+    <div id="controls">
+        <div>
+            <button style="margin-bottom: 10px" onclick="toggleGrid(this)">Show wireframe</button>
+        </div>
+        <div>
+            <label style="margin-right: 10px" for="eyeSeparation">Eye Separation</label>
+            <input type="number" min="0" max="1000" value="20" class="slider" step="1" id="eyeSeparation">
+        </div>
+    </div>
+</div>
+<div id="canvas-holder" style="width: 100vw; height: 100vh">
+    <canvas id="webglcanvas" style="background-color:red">
+    </canvas>
+</div>
+
+
+</body>
+</html>
